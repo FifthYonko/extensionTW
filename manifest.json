@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Mon Extension Chrome",
+    "version": "1.0",
+    "description": "Une simple extension Chrome.",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "contextMenus",
+        "scripting",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "32": "images/icon32.png",
+            "128": "images/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "128": "images/icon128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "popup.css"
+            ]
+        }
+    ]
+}
